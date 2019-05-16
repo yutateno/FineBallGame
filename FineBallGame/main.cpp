@@ -18,12 +18,12 @@ struct SVariable
 
 
 // 描画
-void Draw(SVariable& t_playerA, SVariable& t_playerB, int& t_gameCount);
+void Draw(SVariable (&t_playerA)[2], int& t_gameCount);
 
 
 
 // プロセス
-bool Process(SVariable& t_playerA, SVariable& t_playerB, int& t_gameCount);
+bool Process(SVariable(&t_playerA)[2], int& t_gameCount);
 
 
 
@@ -79,10 +79,10 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 		KeyData::UpDate();						// キーボードの更新
 
 
-		Draw(player[0], player[1], gameCount);
+		Draw(player, gameCount);
 
 
-		if (endFlag = Process(player[0], player[1], gameCount))
+		if (endFlag = Process(player, gameCount))
 		{
 			DrawGraph(95, 52, end, false);
 
@@ -107,10 +107,10 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 
 
 /// -------------------------------------------------------------------------------------------------
-void Draw(SVariable& t_playerA, SVariable& t_playerB, int& t_gameCount)
+void Draw(SVariable(&t_playerA)[2], int& t_gameCount)
 {
-	SVariable* playerA = &t_playerA;
-	SVariable* playerB = &t_playerB;
+	SVariable* playerA = &t_playerA[0];
+	SVariable* playerB = &t_playerA[1];
 
 
 	DrawGraph(64, 480 - 64 * 3, playerA->draw, false);
@@ -122,7 +122,7 @@ void Draw(SVariable& t_playerA, SVariable& t_playerB, int& t_gameCount)
 		DrawCircle(64 + 32, 144, playerA->count, GetColor(0, 0, 0), false);
 		DrawCircle(640 - 64 - 32, 144, playerB->count, GetColor(0, 0, 0), false);
 	}
-	else
+	else if(t_gameCount < 70)
 	{
 		DrawCircle(64 + 32 + (t_gameCount - 40), 144 + (t_gameCount - 40), playerA->count, GetColor(0, 0, 0), false);
 		DrawCircle(640 - 64 - 32 - (t_gameCount - 40), 144 + (t_gameCount - 40), playerB->count, GetColor(0, 0, 0), false);
@@ -139,10 +139,10 @@ void Draw(SVariable& t_playerA, SVariable& t_playerB, int& t_gameCount)
 
 
 /// -------------------------------------------------------------------------------------------------
-bool Process(SVariable& t_playerA, SVariable& t_playerB, int& t_gameCount)
+bool Process(SVariable(&t_playerA)[2], int& t_gameCount)
 {
-	SVariable* playerA = &t_playerA;
-	SVariable* playerB = &t_playerB;
+	SVariable* playerA = &t_playerA[0];
+	SVariable* playerB = &t_playerA[1];
 
 
 	if (!playerA->click)
