@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.202
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FineBallGame", "FineBallGame.vcxproj", "{FDE765AE-59DA-42E2-8B7A-0ADD2C49FA70}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FDE765AE-59DA-42E2-8B7A-0ADD2C49FA70}.Debug|x64.ActiveCfg = Debug|x64
+		{FDE765AE-59DA-42E2-8B7A-0ADD2C49FA70}.Debug|x64.Build.0 = Debug|x64
+		{FDE765AE-59DA-42E2-8B7A-0ADD2C49FA70}.Debug|x86.ActiveCfg = Debug|Win32
+		{FDE765AE-59DA-42E2-8B7A-0ADD2C49FA70}.Debug|x86.Build.0 = Debug|Win32
+		{FDE765AE-59DA-42E2-8B7A-0ADD2C49FA70}.Release|x64.ActiveCfg = Release|x64
+		{FDE765AE-59DA-42E2-8B7A-0ADD2C49FA70}.Release|x64.Build.0 = Release|x64
+		{FDE765AE-59DA-42E2-8B7A-0ADD2C49FA70}.Release|x86.ActiveCfg = Release|Win32
+		{FDE765AE-59DA-42E2-8B7A-0ADD2C49FA70}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0EEBF242-D9FD-48A7-8F7E-E3CE35BB76FA}
+	EndGlobalSection
+EndGlobal
