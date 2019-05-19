@@ -18,12 +18,12 @@ struct SVariable
 
 
 // 描画
-void Draw(const SVariable (&t_playerA)[2], const int& t_gameCount);
+void Draw(const SVariable (&t_player)[2], const int& t_gameCount);
 
 
 
 // プロセス
-bool Process(SVariable(&t_playerA)[2], int& t_gameCount);
+bool Process(SVariable(&t_player)[2], int& t_gameCount);
 
 
 
@@ -70,9 +70,6 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 	int end = LoadGraph("media\\bakuhatsu.png");
 
 
-	bool endFlag = false;
-
-
 	// メインループ
 	while (!ScreenFlip() && !ProcessMessage() && !ClearDrawScreen() && KeyData::CheckEnd())
 	{
@@ -82,7 +79,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 		Draw(player, gameCount);
 
 
-		if (endFlag = Process(player, gameCount))
+		if (Process(player, gameCount))
 		{
 			DrawGraph(95, 52, end, false);
 
@@ -107,10 +104,10 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 
 
 /// -------------------------------------------------------------------------------------------------
-void Draw(const SVariable(&t_playerA)[2], const int& t_gameCount)
+void Draw(const SVariable(&t_player)[2], const int& t_gameCount)
 {
-	const SVariable* playerA = &t_playerA[0];
-	const SVariable* playerB = &t_playerA[1];
+	const SVariable* playerA = &t_player[0];
+	const SVariable* playerB = &t_player[1];
 
 
 	DrawGraph(64, 480 - 64 * 3, playerA->draw, false);
@@ -139,10 +136,10 @@ void Draw(const SVariable(&t_playerA)[2], const int& t_gameCount)
 
 
 /// -------------------------------------------------------------------------------------------------
-bool Process(SVariable(&t_playerA)[2], int& t_gameCount)
+bool Process(SVariable(&t_player)[2], int& t_gameCount)
 {
-	SVariable* playerA = &t_playerA[0];
-	SVariable* playerB = &t_playerA[1];
+	SVariable* playerA = &t_player[0];
+	SVariable* playerB = &t_player[1];
 
 
 	if (!playerA->click)
